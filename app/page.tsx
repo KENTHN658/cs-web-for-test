@@ -1,113 +1,130 @@
-import Image from 'next/image'
+"use client";
+import Carousel from "@/components/Carousel";
+import Image from "next/image";
+import { EmblaOptionsType } from "embla-carousel-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export default function Home() {
+  const images = ["/banner1.svg", "/banner2.svg", "/banner3.svg"];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        className="mySwiper"
+      >
+        {images.map((src, i) => (
+          <SwiperSlide>
+            <div className="relative h-96 flex-[0_0_100%]" key={i}>
+              <Image
+                src={src}
+                fill
+                className="object-cover"
+                alt="asdasdasdasdad"
+              />
+              <div className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
+                <h1 className="text-white font-semibold text-4xl">
+                  COMPUTER SCIENCE
+                </h1>
+                <p className="text-gray-200 pr-9">CMU</p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="mx-auto max-w-7xl px-2 mt-4 sm:px-6 pt-5">
+        <div className="flex">
+          <div className="flex flex-col space-y-2">
+            <div className="px-8 py-0.5 bg-black w-full "></div>
+            <p className="text-4xl font-extrabold text-gray-900 dark:text-white">
+              Academic
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+
+      <div className="mx-auto max-w-7xl px-2 mt-4 sm:px-6 pt-5">
+        <div className="flex flex-row">
+          <div className="basis-1/3">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg min-h-full">
+              <Image
+                src={"/master.svg"}
+                width="0"
+                height="0"
+                sizes="100vw"
+                alt="banner"
+                className="w-full h-full"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+                <p className="text-gray-700 text-base">
+                  The Computer Science Department admits students to an
+                  undergraduate program that you are guaranteed to find rigorous
+                  and dedicated to the real-world training and practical problem
+                  solving that has been the hallmark of computer science
+                  education at CMU since its inception.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="basis-1/3">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg min-h-full">
+              <Image
+                src={"/master.svg"}
+                width="0"
+                height="0"
+                sizes="100vw"
+                alt="banner"
+                className="w-full h-full"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+                <p className="text-gray-700 text-base">
+                  We offer three distinct master’s options for students who have
+                  completed (or will complete) a bachelor’s degree and want to
+                  extend their training in computer science. Our largest program
+                  is the M.S. in Computer Science, which allows students to work
+                  with their academic advisor to create their own course of
+                  study.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="basis-1/3">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg min-h-full">
+              <Image
+                src={"/master.svg"}
+                width="0"
+                height="0"
+                sizes="100vw"
+                alt="banner"
+                className="w-full h-full"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+                <p className="text-gray-700 text-base">
+                  Chiang Mai University's Ph.D. in Computer Science is, above
+                  all, a research degree. We certify that our students have a
+                  broad foundation and awareness of core concepts in computer
+                  science, have advanced the field by performing significant
+                  original research and have reported that work in a scholarly
+                  fashion.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
