@@ -42,7 +42,7 @@ const NavbarHeader = (props: Props) => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="md:hidden"
           />
-          <NavbarBrand className="justify-start">
+          <NavbarBrand className="justify-start hidden md:flex">
             <Image
               className="hidden md:block"
               src={"/cs-cmu-logo.svg"}
@@ -59,9 +59,26 @@ const NavbarHeader = (props: Props) => {
               </h2>
             </div>
           </NavbarBrand>
+
+          <NavbarBrand className="justify-center flex md:hidden">
+            {/* <Image
+              className="hidden sm:block sm:w-16 sm:h-16"
+              src={"/cs-cmu-logo.svg"}
+              alt="Logo CSCMU"
+              width="90"
+              height="90"
+            /> */}
+            <div>
+              <h2 className="font-semibold text-base md:text-xl">
+                Department of Computer science
+              </h2>
+              
+            </div>
+          </NavbarBrand>
+          
         </NavbarContent>
         <NavbarContent className=" hidden md:flex pl-5" justify="end">
-          <div className="w-50 mr-8">
+          <div className="w-50 mr-8 pt-5">
             <Input
               label="Search"
               isClearable
