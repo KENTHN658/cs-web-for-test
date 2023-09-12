@@ -61,13 +61,6 @@ const NavbarHeader = (props: Props) => {
           </NavbarBrand>
 
           <NavbarBrand className="justify-center flex md:hidden">
-            {/* <Image
-              className="hidden sm:block sm:w-16 sm:h-16"
-              src={"/cs-cmu-logo.svg"}
-              alt="Logo CSCMU"
-              width="90"
-              height="90"
-            /> */}
             <div>
               <h2 className="font-semibold text-base md:text-xl">
                 Department of Computer science
@@ -77,7 +70,7 @@ const NavbarHeader = (props: Props) => {
           </NavbarBrand>
           
         </NavbarContent>
-        <NavbarContent className=" hidden md:flex pl-5" justify="end">
+        {/* <NavbarContent className=" hidden md:flex pl-5" justify="end">
           <div className="w-50 mr-8 pt-5">
             <Input
               label="Search"
@@ -101,7 +94,7 @@ const NavbarHeader = (props: Props) => {
               }}
             />
           </div>
-        </NavbarContent>
+        </NavbarContent> */}
         <NavbarMenu className="uppercase bg-[#F4F4F4] gap-0">
           {navItems.map((item, index) =>
             item.type === "dropdown" ? (

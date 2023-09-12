@@ -1,3 +1,7 @@
 export type CarouselProps = {
-  images: Array<string>
+  images: string
+  href?: string
+  title: string
+  content: string
 }
+

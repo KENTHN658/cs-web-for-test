@@ -5,8 +5,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { CarouselProps } from "@/types/carousel";
+import Link from "next/link";
 
-const Carousel = ({ images }: CarouselProps) => {
+const Carousel = ({ images }: { images: CarouselProps[] }) => {
   return (
     <Swiper
       spaceBetween={30}
@@ -18,22 +19,24 @@ const Carousel = ({ images }: CarouselProps) => {
       modules={[Autoplay]}
       className="mySwiper"
     >
-      {images.map((src, i) => (
+      {images.map((item, index) => (
         <SwiperSlide>
-          <div className="relative h-96 flex-[0_0_100%]" key={i}>
-            <Image
-              src={src}
-              fill
-              className="object-cover"
-              alt="asdasdasdasdad"
-            />
-            <div className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
-              <h1 className="text-white font-semibold text-4xl">
-                COMPUTER SCIENCE
-              </h1>
-              <p className="text-gray-200 pr-9">CMU</p>
+          <Link href={item.href ?? "#"}>
+            <div className="relative h-96 flex-[0_0_100%]" key={index}>
+              <Image
+                src={item.images}
+                fill
+                className="object-none"
+                alt="asdasdasdasdad"
+              />
+              <div className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
+                <h1 className="text-white font-semibold text-4xl">
+                  {item.title}
+                </h1>
+                <p className="text-gray-200 pr-9">{item.content}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>
