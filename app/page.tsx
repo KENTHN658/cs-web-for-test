@@ -9,8 +9,8 @@ export default function Home() {
     {
       images: "/12-8-2023.png",
       href: "#",
-      title: "COMPUTER SCIENCE",
-      content: "CMU",
+      title: "วันแม่แห่งชาติ",
+      content: "ปัจจุบันตรงกับวันที่ 12 สิงหาคม ของทุกปี ซึ่งตรงกับวันคล้ายวันพระราชสมภพของสมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง",
     },
     {
       images: "/banner1.svg",

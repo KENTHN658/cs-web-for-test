@@ -60,7 +60,7 @@ const NewsAndEvent = (props: Props) => {
     <>
       <div className="flex flex-col md:flex-row mx-auto max-w-7xl px-2 mt-4 sm:px-6 pt-5 gap-5">
         <div className="w-full md:w-2/3">
-          <div className="flex pb-5">
+           <div className="flex pb-5">
             <div className="flex flex-col space-y-2 mt-7">
               <div className="px-8 py-0.5 bg-black w-full "></div>
               <p className="text-4xl font-extrabold text-gray-900 dark:text-white">

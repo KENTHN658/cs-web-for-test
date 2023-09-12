@@ -26,11 +26,11 @@ const Carousel = ({ images }: { images: CarouselProps[] }) => {
               <Image
                 src={item.images}
                 fill
-                className="object-none"
+                className="object-scale-down sm:object-none "
                 alt="asdasdasdasdad"
               />
               <div className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
-                <h1 className="text-white font-semibold text-4xl">
+                <h1 className="text-white font-semibold text-5auto">
                   {item.title}
                 </h1>
                 <p className="text-gray-200 pr-9">{item.content}</p>

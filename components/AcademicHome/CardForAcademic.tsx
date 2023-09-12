@@ -18,7 +18,7 @@ const CardForAcademic = ({ posts }: { posts: CardOfEventProps[] }) => {
                 height="0"
                 sizes="100vw"
                 alt="banner"
-                className="w-full h-full"
+                className="object-contain h-96 w-96 hover:object-scale-down" 
               />
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{item.title}</div>
