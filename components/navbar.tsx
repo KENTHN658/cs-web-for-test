@@ -14,7 +14,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Switch,
   Listbox,
   ListboxItem,
   Input,
@@ -51,10 +50,10 @@ const NavbarHeader = (props: Props) => {
               height="90"
             />
             <div>
-              <h2 className="font-semibold text-base md:text-xl">
+              <h2 className="font- text-base md:text-xl">
                 Department of
               </h2>
-              <h2 className="font-semibold text-base md:text-xl">
+              <h2 className="font-semibold text-base md:text-3xl">
                 Computer science
               </h2>
             </div>

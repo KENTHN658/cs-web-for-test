@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { CardOfEventProps } from "@/types/cardofevent";
 import CardForAcademic from "./CardForAcademic";
 import Link from "next/link";
