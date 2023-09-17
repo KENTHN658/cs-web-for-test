@@ -7,11 +7,11 @@ export const navItems: navbar[] = [
     options: [
       {
         title: "Undergraduate",
-        href: "/program/master-degree",
+        href: "/academics/undergraduate",
       },
       {
         title: "Master",
-        href: "/program/phd",
+        href: "/academics/master",
       },
       {
         title: "Doctoral",
@@ -80,7 +80,7 @@ export const navItems: navbar[] = [
     options: [
       {
         title: "Lecturers",
-        href: "/courses/master-degree-course",
+        href: "/people",
       },
       {
         title: "Staffs",
@@ -127,6 +127,6 @@ export const navItems: navbar[] = [
   {
     title: "FAQs",
     type: "button",
-    href: "/KEN"
+    href: "/faqs"
 },
 ];

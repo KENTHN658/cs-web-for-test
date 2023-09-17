@@ -28,8 +28,10 @@ export default function page({}: Props) {
     },
   ];
   return (
-    <>
+ 
+      <div className="hidden sm:block dgghgfhgfhfgh">
       <Carousel images={images}></Carousel>
-    </>
+      </div>
+    
   );
 }
