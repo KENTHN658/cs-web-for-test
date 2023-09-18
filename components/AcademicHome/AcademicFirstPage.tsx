@@ -45,10 +45,8 @@ const AcademicFirstPage = (props: Props) => {
       </div>
 
       <div className="mx-auto max-w-7xl px-2 mt-4 sm:px-6 pt-5">
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 overflow-x md:grid-cols-3 gap-1  ">
-          
-          <CardForAcademic posts={posts} ></CardForAcademic>
+        <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-1 snap-proximity snap-x">
+          <CardForAcademic posts={posts}></CardForAcademic>
         </div>
       </div>
     </>

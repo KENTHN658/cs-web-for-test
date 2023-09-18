@@ -29,11 +29,11 @@ const Footer = (props: Props) => {
                   </p>
                 </div>
                 <br></br>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white flex md:hidden">
                   Social Media
                 </h2>
 
-                <li className="mb-4">
+                <li className="mb-4 flex md:hidden">
                   <a
                     href="https://www.facebook.com/compscicmu/"
                     className="hover:underline"
@@ -41,7 +41,7 @@ const Footer = (props: Props) => {
                     Facebook Computer Science CMU
                   </a>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 flex md:hidden">
                   <a
                     href="https://www.facebook.com/cscmuhomecoming/"
                     className="hover:underline"
@@ -49,7 +49,7 @@ const Footer = (props: Props) => {
                     Facebook Page ศิษย์เก่า
                   </a>
                 </li>
-                <li className="mb-4">
+                <li className="mb-4 flex md:hidden">
                   <a
                     href="https://www.google.com/maps/d/u/0/viewer?mid=1XzZUWuQlmVJeZC2dcBxA2yKIXO8&ll=18.80376300042011%2C98.95247199999993&z=20"
                     className="hover:underline"
