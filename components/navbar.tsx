@@ -47,7 +47,7 @@ const NavbarHeader = (props: Props) => {
             <Link href="http://localhost:3000/">
               <Image
                 className="hidden md:block"
-                src={"/cs-cmu-logo.svg"}
+                src={"/logo_cs_cmu.svg"}
                 alt="Logo CSCMU"
                 width="90"
                 height="90"
@@ -80,7 +80,7 @@ const NavbarHeader = (props: Props) => {
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarMenu className="uppercase bg-[#F4F4F4] gap-0">
+        <NavbarMenu className="uppercase bg-[#F2F2F2] gap-0">
           {navItems.map((item, index) =>
             item.type === "dropdown" ? (
               <NavbarMenuItem className="text-primary" key={item.title}>

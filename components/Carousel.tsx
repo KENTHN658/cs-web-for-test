@@ -21,13 +21,13 @@ const Carousel = ({ images }: { images: CarouselProps[] }) => {
         className="mySwiper "
       >
         {images.map((item, index) => (
-          <SwiperSlide>
-            <Link key={index} href={item.href ?? "#"}>
+          <SwiperSlide key={index}>
+            <Link  href={item.href ?? "#"}>
               <div className="relative h-96 flex-[0_0_100%]" key={index}>
                 <Image
                   src={item.images}
                   fill
-                  className="w-full h-60 object-cover rounded-lg sm:h-52"
+                  className="w-full h-full object-fill  rounded-lg sm:h-52"
                   alt="asdasdasdasdad"
                 />
                 <div className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">

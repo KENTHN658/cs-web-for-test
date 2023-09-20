@@ -5,6 +5,7 @@ import Carousel from "../Carousel";
 import { CardOfEventProps } from "@/types/cardofevent";
 import CardForEvents from "./CardForEvents";
 import { CarouselProps } from "@/types/carousel";
+import CarouselForNews from "../CarouselForNews";
 
 type Props = {};
 
@@ -12,19 +13,19 @@ const NewsAndEvent = (props: Props) => {
 
   const images: CarouselProps[] = [
     {
-      images: "/pic.png",
+      images: "/news1.png",
       href: "#",
       title: "ขอแสดงความยินดีกับ นักศึกษาและคณาจารย์ จากภาควิชาวิทยาการคอมพิวเตอร์",
       content: "ขอแสดงความยินดีกับนักศึกษาและคณาจารย์จากภาควิชาวิทยาการคอมพิวเตอร์ที่ได้รับคัดเลือกผลงานไปนำเสนอในงานประชุมวิชาการระดับนานาชาติ",
     },
     {
-      images: "/pic.png",
+      images: "/news2.jpg",
       href: "#",
       title: "string",
       content: "string",
     },
     {
-      images: "/pic.png",
+      images: "/news3.png",
       href: "#",
       title: "string",
       content: "string",
@@ -70,7 +71,7 @@ const NewsAndEvent = (props: Props) => {
           </div>
 
           <div className="pt-5">
-            <Carousel images={images} />
+            <CarouselForNews images={images} />
           </div>
         </div>
         <div>

@@ -5,9 +5,9 @@ const CardForEvents = ({ posts }: { posts: CardOfEventProps[] }) => {
   return (
     <>
       {posts.map((item, index) => (
-        <div className="pt-2 w-full">
+        <div className="pt-2 w-full" key={index}>
           <a
-            href={item.href}
+            href={item.href  ?? "#"}
             className="block max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <h3 className="mb-2 text-3auto font-bold tracking-tight text-gray-900 dark:text-white">

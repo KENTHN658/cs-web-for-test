@@ -1,7 +1,5 @@
 "use client";
-import Carousel from "@/components/Carousel";
-import CardForEvents from "@/components/NewAndEventHome/CardForEvents";
-import { CarouselProps } from "@/types/carousel";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 

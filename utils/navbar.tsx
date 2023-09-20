@@ -24,7 +24,7 @@ export const navItems: navbar[] = [
       ,
       {
         title: "Non Degree",
-        href: "/program/phd",
+        href: "/academics/nondegree",
       }
     ],
   },
