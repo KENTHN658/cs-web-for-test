@@ -28,20 +28,7 @@ const AcademicFirstPage = (props: Props) => {
       href: "#",
       image: "/doctor.jpg",
     },
-    {
-      title: "DOCTORAL",
-      content:
-        "Chiang Mai University's Ph.D. in Computer Science is, above all, a research degree. We certify that our students have a broad foundation and awareness of core concepts in computer science, have advanced the field by performing significant original research and have reported that work in a scholarly fashion.",
-      href: "#",
-      image: "/doctor.jpg",
-    },
-    {
-      title: "DOCTORAL",
-      content:
-        "Chiang Mai University's Ph.D. in Computer Science is, above all, a research degree. We certify that our students have a broad foundation and awareness of core concepts in computer science, have advanced the field by performing significant original research and have reported that work in a scholarly fashion.",
-      href: "#",
-      image: "/doctor.jpg",
-    },
+    
   ];
   return (
     <>

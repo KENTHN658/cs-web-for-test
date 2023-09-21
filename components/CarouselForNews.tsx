@@ -21,9 +21,9 @@ const CarouselForNews = ({ images }: { images: CarouselProps[] }) => {
         className="mySwiper "
       >
         {images.map((item, index) => (
-          <SwiperSlide  >
+          <SwiperSlide key={index} >
             <Link key={index} href={item.href ?? "#"}>
-              <div className="relative h-96 flex-[0_0_100%]" key={index}>
+              <div className="relative h-96 flex-[0_0_100%] hidden md:flex" key={index}>
                 <Image
                   src={item.images}
                   fill

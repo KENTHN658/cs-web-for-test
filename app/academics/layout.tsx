@@ -1,9 +1,33 @@
 "use client";
 
+import Carousel from "@/components/Carousel";
+import CarouselForNews from "@/components/CarouselForNews";
+import { CarouselProps } from "@/types/carousel";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const images: CarouselProps[] = [
+  {
+    images: "/bg1.jpg",
+    href: "#",
+    title: "วันแม่แห่งชาติ",
+    content:
+      "ปัจจุบันตรงกับวันที่ 12 สิงหาคม ของทุกปี ซึ่งตรงกับวันคล้ายวันพระราชสมภพของสมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง",
+  },
+  {
+    images: "/bg2.jpg",
+    href: "#",
+    title: "COMPUTER SCIENCE",
+    content: "CMU",
+  },
+  {
+    images: "/bg1.jpg",
+    href: "#",
+    title: "COMPUTER SCIENCE",
+    content: "CMU",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +41,8 @@ export default function aboutLayout({
 }) {
   return (
     <>
+      <CarouselForNews images={images}></CarouselForNews>
+
       {children}
     </>
   );

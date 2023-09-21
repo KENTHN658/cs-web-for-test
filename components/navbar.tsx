@@ -171,7 +171,8 @@ const NavbarHeader = (props: Props) => {
                     base: "gap-4",
                   }}
                 >
-                  {item.options ? (
+                  {/* if(item.options) {  }else{} */}
+                  {item.options ? ( 
                     item.options?.map((value, index) => (
                       <DropdownItem
                         className="capitalize"

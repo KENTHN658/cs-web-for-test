@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import SearchBar from "./search-bar";
+import Sidebar1 from "@/components/Sidebar1";
 
 // This component passed as a fallback to the Suspense boundary
 // will be rendered in place of the search bar in the initial HTML.
@@ -12,12 +13,7 @@ function SearchBarFallback() {
 export default function Page() {
   return (
     <>
-      <nav>
-        <Suspense fallback={<SearchBarFallback />}>
-          <SearchBar />
-        </Suspense>
-      </nav>
-      <h1>Dashboard</h1>
+      <Sidebar1></Sidebar1>
     </>
   );
 }
