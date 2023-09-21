@@ -1,10 +1,10 @@
 import { Sidebar } from "@/types/sidebar";
 
-
 export const sidebarItem: Sidebar[] = [
   {
     content: "UNDERGRADUATE PROGRAMS",
     type: "header",
+    href: "/academics/undergraduate",
   },
   {
     content: "Couses",
@@ -95,7 +95,7 @@ export const sidebarItem: Sidebar[] = [
     ],
   },
   {
-    content: "Undergraduate 59(63)x",
+    content: "Undergraduate 59(63)",
     type: "multiItem",
     SidebarOption: [
       {
@@ -180,28 +180,28 @@ export const sidebarItem: Sidebar[] = [
     SidebarOption: [
       {
         title: "Score Report",
-        href:"#",
-        type:"NotHave"
+        href: "#",
+        type: "NotHave",
       },
       {
         title: "Assignment Submission",
-        href:"#",
-        type:"NotHave"
+        href: "#",
+        type: "NotHave",
       },
       {
         title: "Student Research",
-        href:"#",
-        type:"NotHave"
+        href: "#",
+        type: "NotHave",
       },
       {
         title: "Phone Number",
-        href:"#",
-        type:"NotHave"
+        href: "#",
+        type: "NotHave",
       },
       {
         title: "Line Chat Bot",
-        href:"#",
-        type:"NotHave"
+        href: "#",
+        type: "NotHave",
       },
     ],
   },

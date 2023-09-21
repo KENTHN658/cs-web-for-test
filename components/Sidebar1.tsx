@@ -22,22 +22,22 @@ const Sidebar1 = (props: Props) => {
             {sidebarItem.map((item, index) =>
               item.type === "header" ? (
                 <>
-                  <div className="p-2 ml-2" key={item.content}>
+                  <Sidebar.Item href={item.href} key={item.content}>
                     <h1>{item.content}</h1>
-                  </div>
+                  </Sidebar.Item>
 
-                  <div className="flex flex-col space-y-1 mt-7" key={item.content}>
-                    <div className="px-8 py-0.5 bg-slate-500" ></div>
+                  <div className="flex flex-col space-y-1 mt-7">
+                    <div className="px-8 py-0.5 bg-slate-500"></div>
                   </div>
                 </>
               ) : item.type === "singleItem" ? (
                 <>
                   <Sidebar.Item href={item.href} key={item.content}>
-                    <p >{item.content}</p>
+                    <p>{item.content}</p>
                   </Sidebar.Item>
 
-                  <div className="flex flex-col space-y-1 mt-7" key={item.content}>
-                    <div className="px-8 py-0.5 bg-slate-500" ></div>
+                  <div className="flex flex-col space-y-1 mt-7">
+                    <div className="px-8 py-0.5 bg-slate-500"></div>
                   </div>
                 </>
               ) : item.type === "multiItem" ? (
@@ -47,19 +47,25 @@ const Sidebar1 = (props: Props) => {
                       item.SidebarOption.map((value, index) =>
                         value.type === "Have" ? (
                           <>
-                            <Sidebar.Collapse label={value.title}  key={value.title} className="ml-5">
-                              {value.SideBarSubOption?.map((value2, index) => (
-                                <>
-                                  <Sidebar.Item href="#" className="ml-7"  >
-                                    {value2.title}
-                                  </Sidebar.Item>
-                                </>
-                              ))}
-                            </Sidebar.Collapse>
+                            <div className="ml-5">
+                              <Sidebar.Collapse label={value.title}>
+                                {value.SideBarSubOption?.map(
+                                  (value2, index) => (
+                                    <>
+                                      <Sidebar.Item href="#">
+                                        <div className="ml-2">
+                                          {value2.title}
+                                        </div>
+                                      </Sidebar.Item>
+                                    </>
+                                  )
+                                )}
+                              </Sidebar.Collapse>
+                            </div>
                           </>
                         ) : (
                           <>
-                            <Sidebar.Item href="#" key={value.title}>{value.title}</Sidebar.Item>
+                            <Sidebar.Item href="#">{value.title}</Sidebar.Item>
                           </>
                         )
                       )
