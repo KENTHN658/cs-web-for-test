@@ -1,11 +1,29 @@
 "use client";
-import React from "react";
-import { sidebarItem } from "@/utils/sidebar";
+import { useCallback } from "react";
+// import { sidebarItem } from "@/utils/sidebar";
 import { CustomFlowbiteTheme, Sidebar } from "flowbite-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { SidebarProps } from "@/types/sidebar";
 
 type Props = {};
 
-const Sidebar1 = (props: Props) => {
+const Sidebar1 = ({ sidebarItem }: { sidebarItem: SidebarProps[] }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams()!;
+
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
+
   const customTheme: CustomFlowbiteTheme["sidebar"] = {
     root: {
       inner: "bg-orange",
@@ -22,12 +40,22 @@ const Sidebar1 = (props: Props) => {
             {sidebarItem.map((item, index) =>
               item.type === "header" ? (
                 <>
-                  <Sidebar.Item href={item.href} key={item.content}>
+                  <Sidebar.Item
+                    href="#"
+                    onClick={() => {
+                      router.push(
+                        pathname +
+                          "?" +
+                          createQueryString("page", item.content ?? "#")
+                      );
+                    }}
+                    key={item.content}
+                  >
                     <h1>{item.content}</h1>
                   </Sidebar.Item>
 
                   <div className="flex flex-col space-y-1 mt-7">
-                    <div className="px-8 py-0.5 bg-slate-500"></div>
+                    <div className="border-b border-black border-3 my-2"></div>
                   </div>
                 </>
               ) : item.type === "singleItem" ? (
@@ -37,7 +65,7 @@ const Sidebar1 = (props: Props) => {
                   </Sidebar.Item>
 
                   <div className="flex flex-col space-y-1 mt-7">
-                    <div className="px-8 py-0.5 bg-slate-500"></div>
+                    <div className="border-b border-black border-3 my-2"></div>
                   </div>
                 </>
               ) : item.type === "multiItem" ? (
@@ -74,7 +102,7 @@ const Sidebar1 = (props: Props) => {
                     )}
                   </Sidebar.Collapse>
                   <div className="flex flex-col space-y-1 mt-7">
-                    <div className="px-8 py-0.5 bg-slate-500"></div>
+                    <div className="border-b border-black border-3 my-2"></div>
                   </div>
                 </>
               ) : (

@@ -1,10 +1,12 @@
 "use client";
-import { Sidebar } from "flowbite-react";
+
 
 import type { CustomFlowbiteTheme } from "flowbite-react";
-import React, { useEffect } from "react";
+
 import Image from "next/image";
 import Sidebar1 from "@/components/Sidebar1";
+import { useSearchParams } from "next/navigation";
+import { SidebarProps } from "@/types/sidebar";
 
 type Props = {};
 
@@ -17,6 +19,217 @@ export default function undergraduate({}: Props) {
       button: "text-2xl",
     },
   };
+
+  const searchParams = useSearchParams();
+  const search = searchParams.get("page");
+
+  const sidebarItem: SidebarProps[] = [
+      {
+        content: "UNDERGRADUATE PROGRAMS",
+        type: "header",
+        href: "/academics/undergraduate",
+      },
+      {
+        content: "Couses",
+        href: "/academics/undergraduate/couses",
+        type: "singleItem",
+      },
+      {
+        content: "Undergraduate 64+",
+        type: "multiItem",
+        SidebarOption: [
+          {
+            title: "Study Plan",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Required Courses",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Core Courses",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Elective Courses",
+            type: "Have",
+            SideBarSubOption: [
+              {
+                title: "Free Elective Courses",
+                href: "#",
+              },
+              {
+                title: "GE Elective Courses",
+                href: "#",
+              },
+              {
+                title: "Major Elective Courses",
+                href: "#",
+              },
+            ],
+          },
+          {
+            title: "Compulsory Courses",
+            type: "Have",
+            SideBarSubOption: [
+              {
+                title: "Organization Issues and Information System",
+                href: "#",
+              },
+              {
+                title: "Technology for Application",
+                href: "#",
+              },
+              {
+                title: "Technology and System Methodology",
+                href: "#",
+              },
+              {
+                title: "System of Fundamental Structure",
+                href: "#",
+              },
+              {
+                title: "Hardware and Computer Architecture",
+                href: "#",
+              },
+            ],
+          },
+          {
+            title: "Plan-Specific Compulsory Courses",
+            type: "Have",
+            SideBarSubOption: [
+              {
+                title: "Regular Plan",
+                href: "#",
+              },
+              {
+                title: "Co-Operative Education Plan",
+                href: "#",
+              },
+              {
+                title: "Honors Plan",
+                href: "#",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        content: "Undergraduate 59(63)",
+        type: "multiItem",
+        SidebarOption: [
+          {
+            title: "Study Plan",
+            href: "#",
+          },
+          {
+            title: "Required Courses",
+            href: "#",
+          },
+          {
+            title: "Core Courses",
+            href: "#",
+          },
+          {
+            title: "Elective Courses",
+            type: "Have",
+            SideBarSubOption: [
+              {
+                title: "Free Elective Courses",
+                href: "#",
+              },
+              {
+                title: "GE Elective Courses",
+                href: "#",
+              },
+              {
+                title: "Major Elective Courses",
+                href: "#",
+              },
+            ],
+          },
+          {
+            title: "Compulsory Courses",
+            type: "Have",
+            SideBarSubOption: [
+              {
+                title: "Organization Issues and Information System",
+                href: "#",
+              },
+              {
+                title: "Technology for Application",
+                href: "#",
+              },
+              {
+                title: "Technology and System Methodology",
+                href: "#",
+              },
+              {
+                title: "System of Fundamental Structure",
+                href: "#",
+              },
+              {
+                title: "Hardware and Computer Architecture",
+                href: "#",
+              },
+            ],
+          },
+          {
+            title: "Plan-Specific Compulsory Courses",
+            type: "Have",
+            SideBarSubOption: [
+              {
+                title: "Regular Plan",
+                href: "#",
+              },
+              {
+                title: "Co-Operative Education Plan",
+                href: "#",
+              },
+              {
+                title: "Honors Plan",
+                href: "#",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        content: "Student portal",
+        type: "multiItem",
+        SidebarOption: [
+          {
+            title: "Score Report",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Assignment Submission",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Student Research",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Phone Number",
+            href: "#",
+            type: "NotHave",
+          },
+          {
+            title: "Line Chat Bot",
+            href: "#",
+            type: "NotHave",
+          },
+        ],
+      },
+    ];
+    
 
   return (
     <>
@@ -38,7 +251,7 @@ export default function undergraduate({}: Props) {
             </div>
             <div className="p-5">
               <p>
-                World-renowned for both rigor and innovation, EECS is the
+                {/* World-renowned for both rigor and innovation, EECS is the
                 largest undergraduate program at MIT. Our flexible curriculum
                 and inventive, hands-on approach to coursework gives students a
                 holistic view of the field, an understanding of how to solve
@@ -46,7 +259,8 @@ export default function undergraduate({}: Props) {
                 them for success in a wide range of fields, from research to
                 industry and beyond. The majority of undergraduate programs in
                 EECS are administered by the EECS Undergraduate Office, who can
-                be reached at ug@eecs.mit.edu.
+                be reached at ug@eecs.mit.edu. */}
+                {search}
               </p>
             </div>
           </div>
@@ -54,7 +268,7 @@ export default function undergraduate({}: Props) {
         <div className="w-full md:w-1/3 order-first md:order-last ">
           <div className="flex flex-col space-y-2 mt-7">
             <div className="px-8 py-0.5 bg-black w-full"></div>
-            <Sidebar1></Sidebar1>
+            <Sidebar1 sidebarItem={sidebarItem}></Sidebar1>
           </div>
         </div>
       </div>

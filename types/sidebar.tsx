@@ -4,14 +4,14 @@ export type Option2 = {
 };
 
 export type Option1 = {
-  type?: "Have" | "NotHave";
+  type?: "Have" | "NotHave"; 
   title?: string;
   href?: string;
   SideBarSubOption?: Array<Option2>;
 };
 
-export type Sidebar = {
-  type: "header" | "singleItem" | "multiItem";
+export type SidebarProps = {
+  type: "header" | "singleItem" | "multiItem"; 
   href?: string;
   content?: string;
   SidebarOption?: Array<Option1>;
