@@ -23,13 +23,14 @@ import { useRouter } from "next/navigation";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { navItems } from "@/utils/navbar";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 type Props = {};
 
 const NavbarHeader = (props: Props) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
+  
   return (
     <>
       <Navbar
@@ -78,6 +79,9 @@ const NavbarHeader = (props: Props) => {
               </div>
             </Link>
           </NavbarBrand>
+          <div className="hidden md:flex">
+            <LocaleSwitcher></LocaleSwitcher>
+          </div>
         </NavbarContent>
 
         <NavbarMenu className="uppercase bg-[#F2F2F2] gap-0">
@@ -172,7 +176,7 @@ const NavbarHeader = (props: Props) => {
                   }}
                 >
                   {/* if(item.options) {  }else{} */}
-                  {item.options ? ( 
+                  {item.options ? (
                     item.options?.map((value, index) => (
                       <DropdownItem
                         className="capitalize"

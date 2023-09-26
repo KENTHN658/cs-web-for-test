@@ -3,6 +3,7 @@ import Carousel from "@/components/Carousel";
 import AcademicFirstPage from "@/components/AcademicHome/AcademicFirstPage";
 import NewsAndEvent from "@/components/NewAndEventHome/NewsAndEvent";
 import { CarouselProps } from "@/types/carousel";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Home() {
   const images: CarouselProps[] = [
@@ -27,6 +28,7 @@ export default function Home() {
 
       <AcademicFirstPage></AcademicFirstPage>
       <NewsAndEvent></NewsAndEvent>
+      <LocaleSwitcher></LocaleSwitcher>
     </div>
   );
 }
